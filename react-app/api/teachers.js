@@ -17,6 +17,8 @@ var global= {
 }
 
 export default function handler(req, res){
+    if (req.method == 'GET') console.log('Get /teachers serverless function starts', global)
+
     res.status(200).json(global.teachers);
 }
 //export global
