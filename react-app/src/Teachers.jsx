@@ -15,7 +15,7 @@ export default class Teachers extends React.Component {
             </div>
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         fetch('http://localhost:3333/teachers')
         .then(data => data.json())
         .then(data => {
@@ -26,5 +26,13 @@ export default class Teachers extends React.Component {
         .finally(()=>{
             console.log('fetch done')
         })
+
+        try {
+            const favoriteTeachJson = await fetch('http://localhost:3333/teacher/true')
+            const favoriteTeach = await favoriteTeachJson.json()
+            console.log('favoriteTeach',favoriteTeach)
+        } catch(err){
+            console.warn(err)
+        }
     }
 }
