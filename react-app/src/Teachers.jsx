@@ -16,7 +16,7 @@ export default class Teachers extends React.Component {
     }
 
     async componentDidMount(){
-        fetch('http://localhost:3333/teachers')
+        fetch('/api/teachers')
         .then(data => data.json())
         .then(data => {
             console.log('got data: ', data)
@@ -28,7 +28,7 @@ export default class Teachers extends React.Component {
         })
 
         try {
-            const favoriteTeachJson = await fetch('http://localhost:3333/teacher/true')
+            const favoriteTeachJson = await fetch('(api/teacher/true')
             const favoriteTeach = await favoriteTeachJson.json()
             console.log('favoriteTeach',favoriteTeach)
         } catch(err){
