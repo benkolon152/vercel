@@ -1,4 +1,4 @@
-var globalTeachers= {
+export const globalTeachers= {
     teachers: [
         {
             name: "John Doe",
